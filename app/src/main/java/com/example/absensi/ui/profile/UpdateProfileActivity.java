@@ -5,8 +5,11 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.room.Update;
 
+import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +20,7 @@ import com.example.absensi.model.Users;
 import com.example.absensi.model.profile.ResponseProfile;
 import com.example.absensi.session.SystemDataLocal;
 import com.example.absensi.ui.home.HomeActivity;
+import com.example.absensi.utils.DatePicker;
 import com.example.absensi.utils.DialogClass;
 
 public class UpdateProfileActivity extends AppCompatActivity {
@@ -28,19 +32,20 @@ public class UpdateProfileActivity extends AppCompatActivity {
     private UpdateProfileViewModel updateProfileViewModel;
     private SystemDataLocal systemDataLocal;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_profile);
 
-        id_pegawai = getIntent().getStringExtra("id_pegawai");
-        no_telp = getIntent().getStringExtra("no_telp");
-        tgl_lahir = getIntent().getStringExtra("tgl_lahir");
-        jk = getIntent().getStringExtra("jk");
-        alamat = getIntent().getStringExtra("alamat");
+
         updateProfileViewModel = ViewModelProviders.of(this).get(UpdateProfileViewModel.class);
         systemDataLocal = new SystemDataLocal(this);
-//        Users users = systemDataLocal.getLoginData();
+        id_pegawai = systemDataLocal.getLoginData().getId_pegawai();
+        no_telp = systemDataLocal.getLoginData().getPhone();
+        tgl_lahir = systemDataLocal.getLoginData().getTgl_lahir();
+        jk = systemDataLocal.getLoginData().getJenis_kelamin();
+        alamat = systemDataLocal.getLoginData().getAlamat();
 
         edt_idpegawai = findViewById(R.id.edt_idpegawai);
         edt_notelepon = findViewById(R.id.edt_notelepon);
@@ -63,6 +68,22 @@ public class UpdateProfileActivity extends AppCompatActivity {
         edt_tgllahir.setText(tgl_lahir);
         edt_alamat.setText(alamat);
         edt_jeniskelamin.setText(jk);
+        edt_tgllahir.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(MotionEvent.ACTION_UP == event.getAction()){
+                    new DatePicker(new DatePickerDialog.OnDateSetListener() {
+                        @SuppressLint("SetTextI18n")
+                        @Override
+                        public void onDateSet(android.widget.DatePicker view, int year, int month, int dayOfMonth) {
+                            int bulan = month+1;
+                            edt_tgllahir.setText(year + "-" + bulan + "-" + dayOfMonth);
+                        }
+                    }).show(getSupportFragmentManager(),"Tanggal");
+                }
+                return true;
+            }
+        });
 
         btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,4 +142,5 @@ public class UpdateProfileActivity extends AppCompatActivity {
         });
 
     }
+
 }

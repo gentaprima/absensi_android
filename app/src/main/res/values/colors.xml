@@ -11,4 +11,5 @@
     <color name="shadow">#EDEDED</color>
     <color name="low_grey">#D8D6D6</color>
     <color name="grey">#444343</color>
+    <color name="red">#FF0000</color>
 </resources>

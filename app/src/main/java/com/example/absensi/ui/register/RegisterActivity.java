@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModelProviders;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,9 +21,9 @@ import com.example.absensi.utils.DialogClass;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView tv_login;
+    TextView tv_login,info_ktp;
     Button btn_register;
-    EditText edt_fullname,edt_email,edt_phone,edt_password;
+    EditText edt_fullname,edt_email,edt_phone,edt_password,edt_nik;
     private RegisterViewModel registerViewModel;
     private android.app.AlertDialog alertDialog;
 
@@ -36,10 +38,34 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         edt_email = findViewById(R.id.edt_email);
         edt_phone = findViewById(R.id.edt_number);
         edt_password = findViewById(R.id.edt_password);
+        edt_nik = findViewById(R.id.edt_nik);
+        info_ktp = findViewById(R.id.info_ktp);
         registerViewModel = ViewModelProviders.of(this).get(RegisterViewModel.class);
 
         btn_register.setOnClickListener(this);
         tv_login.setOnClickListener(this);
+        edt_nik.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.length() != 0){
+                    info_ktp.setVisibility(View.VISIBLE);
+                    int digit_ktp = edt_nik.getText().toString().length();
+                    if(digit_ktp  >= 16){
+                        info_ktp.setVisibility(View.GONE);
+                    }
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
 
@@ -63,12 +89,15 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String email = edt_email.getText().toString();
         String phone = edt_phone.getText().toString();
         String password = edt_password.getText().toString();
+        String nik = edt_nik.getText().toString();
+        System.out.println(nik);
+
         View v = getLayoutInflater().inflate(R.layout.loading_alert,null,false);
         alertDialog = DialogClass.dialog(this,v).create();
         alertDialog.show();
 
         if(!full_name.isEmpty() && !email.isEmpty() && !phone.isEmpty() && !password.isEmpty()){
-            registerViewModel.getRegisterResponse(full_name,email,phone,password,device_unique_id).observe(this, new Observer<ResponseRegister>() {
+            registerViewModel.getRegisterResponse(full_name,email,phone,password,device_unique_id,nik).observe(this, new Observer<ResponseRegister>() {
                 @Override
                 public void onChanged(ResponseRegister responseRegister) {
                     if(responseRegister != null){
@@ -79,6 +108,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             edt_email.setText("");
                             edt_password.setText("");
                             edt_phone.setText("");
+                            edt_nik.setText("");
                         }else{
                             alertDialog.dismiss();
                             Toast.makeText(RegisterActivity.this,responseRegister.getMessage(),Toast.LENGTH_LONG).show();

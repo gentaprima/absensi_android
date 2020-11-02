@@ -16,10 +16,10 @@ public class RegisterRepository {
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
     }
 
-    public MutableLiveData<ResponseRegister> getResponseRegister(String fullname,String email,String password,String phone,String imei){
-//        System.out.println(fullname+" " + email + " " + password + " " + phone + " " + imei);
+    public MutableLiveData<ResponseRegister> getResponseRegister(String fullname,String email,String password,String phone,String imei,String nik){
+        System.out.println(nik);
         final MutableLiveData<ResponseRegister> responseRegisterMutableLiveData = new MutableLiveData<>();
-        Call<ResponseRegister> requesOrder = apiInterface.registerUser(fullname,email,phone,password,imei);
+        Call<ResponseRegister> requesOrder = apiInterface.registerUser(fullname,email,phone,password,imei,nik);
         requesOrder.enqueue(new Callback<ResponseRegister>() {
             @Override
             public void onResponse(Call<ResponseRegister> call, Response<ResponseRegister> response) {
