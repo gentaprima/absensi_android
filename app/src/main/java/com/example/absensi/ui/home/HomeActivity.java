@@ -26,6 +26,7 @@ import com.example.absensi.ui.fragment.ProfileFragment;
 import com.example.absensi.ui.fragment.ReportFragment;
 import com.example.absensi.ui.login.LoginActivity;
 import com.example.absensi.ui.profile.SettingActivity;
+import com.example.absensi.ui.scanner.ScannerActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
@@ -133,6 +134,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                         title.setText("Laporan Presensi");
                         iv_logout.setVisibility(View.GONE);
                         return true;
+
+                    case R.id.nav_absensi:
+                        startActivity(new Intent(HomeActivity.this, ScannerActivity.class));
+                        return  true;
 
                     default:return false;
                 }

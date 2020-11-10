@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.absensi.model.register.ResponseRegister;
-import com.example.absensi.network.repository.RegisterRepository;
+import com.example.absensi.network.repository.users.RegisterRepository;
 
 public class RegisterViewModel extends ViewModel {
 

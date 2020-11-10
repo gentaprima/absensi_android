@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.absensi.model.profile.ResponseProfile;
-import com.example.absensi.network.repository.UpdateProfileRepository;
+import com.example.absensi.network.repository.profile.UpdateProfileRepository;
 
 public class UpdateProfileViewModel extends ViewModel {
 

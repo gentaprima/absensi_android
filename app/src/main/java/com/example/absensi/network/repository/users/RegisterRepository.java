@@ -1,4 +1,4 @@
-package com.example.absensi.network.repository;
+package com.example.absensi.network.repository.users;
 
 import androidx.lifecycle.MutableLiveData;
 

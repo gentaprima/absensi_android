@@ -2,6 +2,7 @@ package com.example.absensi.network.api;
 
 
 import com.example.absensi.model.MessageOnly;
+import com.example.absensi.model.absensi.AbsensiResponse;
 import com.example.absensi.model.login.ResponseLogin;
 import com.example.absensi.model.profile.ResponseProfile;
 import com.example.absensi.model.register.ResponseRegister;
@@ -44,5 +45,14 @@ public interface ApiInterface {
     @POST("profile/updateImageProfile")
     Call<MessageOnly> updateImageProfile(@Part MultipartBody.Part image,
                                          @Part("id_users")RequestBody id_users);
+
+    @FormUrlEncoded
+    @POST("absensi/addAbsensi")
+    Call<MessageOnly> addAbsensi(@Field("no_pegawai") String id_pegawai,
+                                 @Field("time") String time);
+
+    @FormUrlEncoded
+    @POST("absensi/getDataAbsensiByIdUsers")
+    Call<AbsensiResponse> getAbsensiHome(@Field("id_users") String id_users);
 
 }

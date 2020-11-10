@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.absensi.model.login.ResponseLogin;
-import com.example.absensi.network.repository.LoginRepository;
+import com.example.absensi.network.repository.users.LoginRepository;
 
 public class LoginViewModel extends ViewModel {
     private LoginRepository loginRepository;
