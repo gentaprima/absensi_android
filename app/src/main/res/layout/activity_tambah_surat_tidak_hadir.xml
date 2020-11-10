@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.surat.tidak_hadir.SuratTidakHadirActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/toolbar" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_activity"
+        android:background="@drawable/container"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_activity"
+            android:layout_marginTop="@dimen/margin_activity"
+            android:layout_marginEnd="@dimen/margin_activity"
+            android:fontFamily="@font/capriola"
+            android:gravity="center_horizontal"
+            android:text="Form Surat Pernyataan"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/edt_namapegawai"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginStart="@dimen/margin_activity"
+            android:layout_marginTop="@dimen/margin_activity"
+            android:layout_marginEnd="@dimen/margin_activity"
+            android:background="@drawable/bg_input_alasan"
+            android:drawableLeft="@drawable/ic_idpegawai"
+            android:drawablePadding="26dp"
+            android:enabled="false"
+            android:hint="Nama Pegawai"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            app:elevation="8dp"
+            tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+        <EditText
+            android:id="@+id/edt_tanggal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginStart="@dimen/margin_activity"
+            android:layout_marginTop="@dimen/margin_activity"
+            android:layout_marginEnd="@dimen/margin_activity"
+            android:background="@drawable/bg_input_alasan"
+            android:drawableLeft="@drawable/ic_calendar_today_24"
+            android:drawablePadding="26dp"
+            android:enabled="false"
+            android:hint="Tanggal Hari ini"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            app:elevation="8dp"
+            tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="@dimen/margin_activity"
+            android:layout_marginTop="@dimen/margin_activity"
+            android:layout_marginEnd="@dimen/margin_activity"
+            android:background="@drawable/bg_input_alasan" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_activity"
+            android:layout_marginTop="@dimen/margin_activity"
+            android:layout_marginEnd="@dimen/margin_activity">
+
+            <Button
+
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_btnlogin"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Upload Bukti"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:src="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlCompat" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/margin_activity"
+            android:layout_marginTop="@dimen/margin_activity"
+            android:layout_marginEnd="@dimen/margin_activity"
+            android:background="@drawable/bg_btnsubmit"
+            android:text="Kirim Data"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
