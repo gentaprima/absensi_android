@@ -227,21 +227,25 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 @Override
                 public void onChanged(MessageOnly messageOnly) {
                     if(messageOnly.getStatus()){
-                        systemDataLocal.edtAllSessionLogin(systemDataLocal.getLoginData().getId_user(),
-                                systemDataLocal.getLoginData().getEmail(),
-                                systemDataLocal.getLoginData().getFull_name(),
-                                systemDataLocal.getLoginData().getPhone(),
-                                systemDataLocal.getLoginData().getPassword(),
-                                systemDataLocal.getLoginData().getRole(),
-                                systemDataLocal.getLoginData().getDevice_id(),
-                                systemDataLocal.getLoginData().getIs_verified(),
-                                systemDataLocal.getLoginData().getAgama(),
-                                systemDataLocal.getLoginData().getAlamat(),
-                                imageFile.getName(),
-                                systemDataLocal.getLoginData().getTgl_lahir(),
-                                systemDataLocal.getLoginData().getJenis_kelamin(),
-                                systemDataLocal.getLoginData().getId_pegawai(),
-                                systemDataLocal.getLoginData().getNama_jabatan());
+                        systemDataLocal.edtAllSessionLogin(systemDataLocal.getLoginData().getEmail(),
+                                                            systemDataLocal.getLoginData().getFull_name(),
+                                                            systemDataLocal.getLoginData().getPhone(),
+                                                            systemDataLocal.getLoginData().getDevice_id(),
+                                                            systemDataLocal.getLoginData().getId_user(),
+                                                            systemDataLocal.getLoginData().getIs_verified(),
+                                                            systemDataLocal.getLoginData().getRole(),
+                                                            systemDataLocal.getLoginData().getPassword(),
+                                                            systemDataLocal.getLoginData().getAlamat(),
+                                                            imageFile.getName(),
+                                                            systemDataLocal.getLoginData().getJenis_kelamin(),
+                                                            systemDataLocal.getLoginData().getId_pegawai(),
+                                                            systemDataLocal.getLoginData().getId_jabatan(),
+                                                            systemDataLocal.getLoginData().getNama_jabatan(),
+                                                            systemDataLocal.getLoginData().getGaji(),
+                                                            systemDataLocal.getLoginData().getTgl_lahir(),
+                                                            systemDataLocal.getLoginData().getNik(),
+                                                            systemDataLocal.getLoginData().getCheck_in(),
+                                                            systemDataLocal.getLoginData().getCheck_out());
                         Toast.makeText(getContext(),messageOnly.getMessage(),Toast.LENGTH_LONG).show();
                         alertDialog.dismiss();
                         Glide.with(getContext()).load(Constanta.BASE_URL_IMG_PROFILE + systemDataLocal.getLoginData().getFoto()).into(profile_image);

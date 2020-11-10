@@ -11,20 +11,17 @@ public class Users {
     private String full_name;
     private String jenis_kelamin;
     private String alamat;
-    private String agama;
     private String foto;
     private String gaji;
     private String id_jabatan;
-    private String id_shift;
     private String tgl_lahir;
     private String id_pegawai;
     private String nama_jabatan;
+    private String check_in;
+    private String check_out;
+    private String nik;
 
-    public String getTgl_lahir() {
-        return tgl_lahir;
-    }
-
-    public Users(String id_user, String email, String password, String role, String phone, String device_id, String is_verified, String full_name, String jenis_kelamin, String alamat, String agama, String foto, String gaji, String id_jabatan, String id_shift, String tgl_lahir,String id_pegawai,String nama_jabatan) {
+    public Users(String id_user, String email, String password, String role, String phone, String device_id, String is_verified, String full_name, String jenis_kelamin, String alamat, String foto, String gaji, String id_jabatan, String tgl_lahir, String id_pegawai, String nama_jabatan, String check_in, String check_out, String nik) {
         this.id_user = id_user;
         this.email = email;
         this.password = password;
@@ -35,18 +32,15 @@ public class Users {
         this.full_name = full_name;
         this.jenis_kelamin = jenis_kelamin;
         this.alamat = alamat;
-        this.agama = agama;
         this.foto = foto;
         this.gaji = gaji;
         this.id_jabatan = id_jabatan;
-        this.id_shift = id_shift;
         this.tgl_lahir = tgl_lahir;
         this.id_pegawai = id_pegawai;
         this.nama_jabatan = nama_jabatan;
-    }
-
-    public String getId_pegawai() {
-        return id_pegawai;
+        this.check_in = check_in;
+        this.check_out = check_out;
+        this.nik = nik;
     }
 
     public String getId_user() {
@@ -73,10 +67,6 @@ public class Users {
         return device_id;
     }
 
-    public String getNama_jabatan() {
-        return nama_jabatan;
-    }
-
     public String getIs_verified() {
         return is_verified;
     }
@@ -93,10 +83,6 @@ public class Users {
         return alamat;
     }
 
-    public String getAgama() {
-        return agama;
-    }
-
     public String getFoto() {
         return foto;
     }
@@ -109,7 +95,27 @@ public class Users {
         return id_jabatan;
     }
 
-    public String getId_shift() {
-        return id_shift;
+    public String getTgl_lahir() {
+        return tgl_lahir;
+    }
+
+    public String getId_pegawai() {
+        return id_pegawai;
+    }
+
+    public String getNama_jabatan() {
+        return nama_jabatan;
+    }
+
+    public String getCheck_in() {
+        return check_in;
+    }
+
+    public String getCheck_out() {
+        return check_out;
+    }
+
+    public String getNik() {
+        return nik;
     }
 }

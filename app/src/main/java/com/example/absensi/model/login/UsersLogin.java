@@ -8,6 +8,12 @@ public class UsersLogin {
     @SerializedName("id_users")
     @Expose
     private String idUsers;
+    @SerializedName("no_pegawai")
+    @Expose
+    private String noPegawai;
+    @SerializedName("nik")
+    @Expose
+    private String nik;
     @SerializedName("nama_lengkap")
     @Expose
     private String namaLengkap;
@@ -38,52 +44,27 @@ public class UsersLogin {
     @SerializedName("alamat")
     @Expose
     private String alamat;
-    @SerializedName("agama")
-    @Expose
-    private String agama;
     @SerializedName("foto")
     @Expose
     private String foto;
-    @SerializedName("gaji")
+    @SerializedName("tgl_lahir")
     @Expose
-    private String gaji;
+    private String tglLahir;
     @SerializedName("id_jabatan")
     @Expose
     private String idJabatan;
-    @SerializedName("id_shift")
+    @SerializedName("check_in")
     @Expose
-    private String idShift;
-
-    @SerializedName("tgl_lahir")
-    private String tgl_lahir;
-
-    @SerializedName("no_pegawai")
-    private String id_pegawai;
-
+    private String checkIn;
+    @SerializedName("check_out")
+    @Expose
+    private String checkOut;
     @SerializedName("nama_jabatan")
-    private String nama_jabatan;
-
-    public UsersLogin(String idUsers, String namaLengkap, String email, String noTelp, String password, String deviceId, String role, String isVerified, String usersId, String jenisKelamin, String alamat, String agama, String foto, String gaji, String idJabatan, String idShift, String tgl_lahir,String id_pegawai, String nama_jabatan) {
-        this.idUsers = idUsers;
-        this.namaLengkap = namaLengkap;
-        this.email = email;
-        this.noTelp = noTelp;
-        this.password = password;
-        this.deviceId = deviceId;
-        this.role = role;
-        this.isVerified = isVerified;
-        this.usersId = usersId;
-        this.jenisKelamin = jenisKelamin;
-        this.alamat = alamat;
-        this.agama = agama;
-        this.foto = foto;
-        this.gaji = gaji;
-        this.idJabatan = idJabatan;
-        this.idShift = idShift;
-        this.tgl_lahir = tgl_lahir;
-        this.id_pegawai = id_pegawai;
-        this.nama_jabatan = nama_jabatan;
-    }
+    @Expose
+    private String namaJabatan;
+    @SerializedName("gaji")
+    @Expose
+    private String gaji;
 
     public String getIdUsers() {
         return idUsers;
@@ -91,6 +72,22 @@ public class UsersLogin {
 
     public void setIdUsers(String idUsers) {
         this.idUsers = idUsers;
+    }
+
+    public String getNoPegawai() {
+        return noPegawai;
+    }
+
+    public void setNoPegawai(String noPegawai) {
+        this.noPegawai = noPegawai;
+    }
+
+    public String getNik() {
+        return nik;
+    }
+
+    public void setNik(String nik) {
+        this.nik = nik;
     }
 
     public String getNamaLengkap() {
@@ -173,14 +170,6 @@ public class UsersLogin {
         this.alamat = alamat;
     }
 
-    public String getAgama() {
-        return agama;
-    }
-
-    public void setAgama(String agama) {
-        this.agama = agama;
-    }
-
     public String getFoto() {
         return foto;
     }
@@ -189,12 +178,12 @@ public class UsersLogin {
         this.foto = foto;
     }
 
-    public String getGaji() {
-        return gaji;
+    public String getTglLahir() {
+        return tglLahir;
     }
 
-    public void setGaji(String gaji) {
-        this.gaji = gaji;
+    public void setTglLahir(String tglLahir) {
+        this.tglLahir = tglLahir;
     }
 
     public String getIdJabatan() {
@@ -205,35 +194,58 @@ public class UsersLogin {
         this.idJabatan = idJabatan;
     }
 
-    public String getIdShift() {
-        return idShift;
+    public String getCheckIn() {
+        return checkIn;
     }
 
-    public void setIdShift(String idShift) {
-        this.idShift = idShift;
+    public void setCheckIn(String checkIn) {
+        this.checkIn = checkIn;
     }
 
-    public String getTgl_lahir() {
-        return tgl_lahir;
+    public String getCheckOut() {
+        return checkOut;
     }
 
-    public void setTgl_lahir(String tgl_lahir) {
-        this.tgl_lahir = tgl_lahir;
+    public void setCheckOut(String checkOut) {
+        this.checkOut = checkOut;
     }
 
-    public String getId_pegawai() {
-        return id_pegawai;
+    public String getNamaJabatan() {
+        return namaJabatan;
     }
 
-    public void setId_pegawai(String id_pegawai) {
-        this.id_pegawai = id_pegawai;
+    public void setNamaJabatan(String namaJabatan) {
+        this.namaJabatan = namaJabatan;
     }
 
-    public String getNama_jabatan() {
-        return nama_jabatan;
+    public String getGaji() {
+        return gaji;
     }
 
-    public void setNama_jabatan(String nama_jabatan) {
-        this.nama_jabatan = nama_jabatan;
+    public UsersLogin(String idUsers, String noPegawai, String nik, String namaLengkap, String email, String noTelp, String password, String deviceId, String role, String isVerified, String usersId, String jenisKelamin, String alamat, String foto, String tglLahir, String idJabatan, String checkIn, String checkOut, String namaJabatan, String gaji) {
+        this.idUsers = idUsers;
+        this.noPegawai = noPegawai;
+        this.nik = nik;
+        this.namaLengkap = namaLengkap;
+        this.email = email;
+        this.noTelp = noTelp;
+        this.password = password;
+        this.deviceId = deviceId;
+        this.role = role;
+        this.isVerified = isVerified;
+        this.usersId = usersId;
+        this.jenisKelamin = jenisKelamin;
+        this.alamat = alamat;
+        this.foto = foto;
+        this.tglLahir = tglLahir;
+        this.idJabatan = idJabatan;
+        this.checkIn = checkIn;
+        this.checkOut = checkOut;
+        this.namaJabatan = namaJabatan;
+        this.gaji = gaji;
+    }
+
+    public void setGaji(String gaji) {
+        this.gaji = gaji;
     }
 }

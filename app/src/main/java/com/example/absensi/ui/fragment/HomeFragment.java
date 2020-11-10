@@ -1,5 +1,6 @@
 package com.example.absensi.ui.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -67,13 +68,22 @@ public class HomeFragment extends Fragment {
         String no_pegawai = systemDataLocal.getLoginData().getId_pegawai();
 
         getAbsensiHomeViewModel.getAbsensiHome(no_pegawai).observe(this, new Observer<AbsensiResponse>() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onChanged(AbsensiResponse absensiResponse) {
                 if(absensiResponse.getStatus()){
-                    tv_checkin.setText(absensiResponse.getDataAbsensi().getCheckIn());
-                    tv_checkout.setText(absensiResponse.getDataAbsensi().getCheckOut());
-                    tv_late.setText(absensiResponse.getDataAbsensi().getLate());
-                    tv_worktime.setText(absensiResponse.getDataAbsensi().getWorkTime());
+                    if(absensiResponse.getDataAbsensi() != null){
+                        tv_checkin.setText(absensiResponse.getDataAbsensi().getCheckIn());
+                        tv_checkout.setText(absensiResponse.getDataAbsensi().getCheckOut());
+                        tv_late.setText(absensiResponse.getDataAbsensi().getLate());
+                        tv_worktime.setText(absensiResponse.getDataAbsensi().getWorkTime());
+                    }else{
+                        tv_checkin.setText("00:00:00");
+                        tv_checkout.setText("00:00:00");
+                        tv_late.setText("00:00:00");
+                        tv_worktime.setText("00:00:00");
+                    }
+
                 }
             }
         });

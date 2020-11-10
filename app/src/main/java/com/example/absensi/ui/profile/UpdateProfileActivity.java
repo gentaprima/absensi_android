@@ -102,21 +102,25 @@ public class UpdateProfileActivity extends AppCompatActivity {
         View v = getLayoutInflater().inflate(R.layout.loading_alert,null,false);
         alertDialog = DialogClass.dialog(this,v).create();
         alertDialog.show();
-        systemDataLocal.edtAllSessionLogin(systemDataLocal.getLoginData().getId_user(),
-                                            systemDataLocal.getLoginData().getEmail(),
+        systemDataLocal.edtAllSessionLogin(systemDataLocal.getLoginData().getEmail(),
                                             systemDataLocal.getLoginData().getFull_name(),
                                             no_telp,
-                                            systemDataLocal.getLoginData().getPassword(),
-                                            systemDataLocal.getLoginData().getRole(),
                                             systemDataLocal.getLoginData().getDevice_id(),
+                                            systemDataLocal.getLoginData().getId_user(),
                                             systemDataLocal.getLoginData().getIs_verified(),
-                                            systemDataLocal.getLoginData().getAgama(),
+                                            systemDataLocal.getLoginData().getRole(),
+                                            systemDataLocal.getLoginData().getPassword(),
                                             alamat,
                                             systemDataLocal.getLoginData().getFoto(),
-                                            date,
                                             jk,
-                                            id_pegawai,
-                                            systemDataLocal.getLoginData().getNama_jabatan()
+                                            systemDataLocal.getLoginData().getId_pegawai(),
+                                            systemDataLocal.getLoginData().getId_jabatan(),
+                                            systemDataLocal.getLoginData().getNama_jabatan(),
+                                            systemDataLocal.getLoginData().getGaji(),
+                                            date,
+                                            systemDataLocal.getLoginData().getNik(),
+                                            systemDataLocal.getLoginData().getCheck_in(),
+                                            systemDataLocal.getLoginData().getCheck_out()
                                             );
 
         updateProfileViewModel.getProfileResponse(
