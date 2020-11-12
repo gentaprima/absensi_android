@@ -17,7 +17,7 @@
         android:layout_marginStart="@dimen/margin_activity"
         android:layout_marginEnd="@dimen/margin_activity"
         app:cardCornerRadius="40dp"
-        app:cardBackgroundColor="@color/colorGray"
+        app:cardBackgroundColor="@color/low_grey"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -77,7 +77,7 @@
         android:layout_marginStart="@dimen/margin_activity"
         android:layout_marginTop="@dimen/margin_activity"
         android:layout_marginEnd="@dimen/margin_activity"
-        app:cardBackgroundColor="@color/colorGray"
+        app:cardBackgroundColor="@color/low_grey"
         app:cardCornerRadius="40dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -137,7 +137,7 @@
         android:layout_marginStart="@dimen/margin_activity"
         android:layout_marginTop="@dimen/margin_activity"
         android:layout_marginEnd="@dimen/margin_activity"
-        app:cardBackgroundColor="@color/colorGray"
+        app:cardBackgroundColor="@color/low_grey"
         app:cardCornerRadius="40dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout

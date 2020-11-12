@@ -14,6 +14,8 @@ public class AbsensiResponse {
     @Expose
     private DataAbsensi dataAbsensi;
 
+
+
     public String getMessage() {
         return message;
     }
@@ -37,4 +39,5 @@ public class AbsensiResponse {
     public void setDataAbsensi(DataAbsensi dataAbsensi) {
         this.dataAbsensi = dataAbsensi;
     }
+
 }

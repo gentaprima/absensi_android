@@ -102,7 +102,7 @@ public class AbsensiActivity extends AppCompatActivity implements View.OnClickLi
     private void addAbsensi() {
         View v = getLayoutInflater().inflate(R.layout.loading_alert,null,false);
         alertDialog = DialogClass.dialog(this,v).create();
-        alertDialog.show();
+        alertDialog.show();;
         addAbsensiViewModel.addAbsensi(systemDataLocal.getLoginData().getId_pegawai(),timeNow).observe(this, new Observer<MessageOnly>() {
             @Override
             public void onChanged(MessageOnly messageOnly) {

@@ -3,6 +3,7 @@ package com.example.absensi.network.api;
 
 import com.example.absensi.model.MessageOnly;
 import com.example.absensi.model.absensi.AbsensiResponse;
+import com.example.absensi.model.laporan.DataLaporanResponse;
 import com.example.absensi.model.login.ResponseLogin;
 import com.example.absensi.model.profile.ResponseProfile;
 import com.example.absensi.model.register.ResponseRegister;
@@ -54,5 +55,9 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("absensi/getDataAbsensiByIdUsers")
     Call<AbsensiResponse> getAbsensiHome(@Field("id_users") String id_users);
+
+    @FormUrlEncoded
+    @POST("absensi/getLaporanKehadiran")
+    Call<DataLaporanResponse> getDataLaporan(@Field("id_users") String id_users);
 
 }
