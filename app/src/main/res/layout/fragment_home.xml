@@ -79,11 +79,11 @@
                     android:background="@drawable/cicrle_shape"
                     android:indeterminate="false"
                     android:max="100"
-                    android:progress="90"
                     android:progressDrawable="@drawable/circle_progress_foreground"
                     android:theme="@style/progressBarBlue" />
 
                 <TextView
+                    android:id="@+id/tv_percent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"

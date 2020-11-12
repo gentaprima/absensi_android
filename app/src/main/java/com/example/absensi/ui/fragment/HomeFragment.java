@@ -21,8 +21,10 @@ import android.widget.TextView;
 import com.example.absensi.R;
 import com.example.absensi.model.absensi.AbsensiResponse;
 import com.example.absensi.model.absensi.DataAbsensi;
+import com.example.absensi.model.absensi.DataPercentResponse;
 import com.example.absensi.session.SystemDataLocal;
 import com.example.absensi.ui.home.GetAbsensiHomeViewModel;
+import com.example.absensi.ui.home.GetDataPercentViewModel;
 import com.example.absensi.utils.ProgressBarAnimation;
 
 import java.time.LocalDateTime;
@@ -32,10 +34,11 @@ import java.util.Locale;
 public class HomeFragment extends Fragment {
 
     SystemDataLocal systemDataLocal;
-    TextView name,tv_date,tv_checkin,tv_checkout,tv_late,tv_worktime;
+    TextView name,tv_date,tv_checkin,tv_checkout,tv_late,tv_worktime,tv_percent;
     Context context;
     ProgressBar  progressBar;
     private GetAbsensiHomeViewModel getAbsensiHomeViewModel;
+    private GetDataPercentViewModel getDataPercentViewModel;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -50,18 +53,37 @@ public class HomeFragment extends Fragment {
         tv_late = view.findViewById(R.id.tv_late);
         tv_worktime = view.findViewById(R.id.tv_worktime);
         tv_date = view.findViewById(R.id.tv_date);
+        tv_percent = view.findViewById(R.id.tv_percent);
+        getDataPercentViewModel = ViewModelProviders.of(this).get(GetDataPercentViewModel.class);
         LocalDateTime ldt = LocalDateTime.now();
         Locale id = new Locale("in","ID");
         String dateNow = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", id).format(ldt);
         name.setText(split[0]);
         progressBar = view.findViewById(R.id.progressbar);
 
-        ProgressBarAnimation anim = new ProgressBarAnimation(progressBar,0,90);
-        anim.setDuration(1000);
-        progressBar.startAnimation(anim);
+
+
         tv_date.setText(dateNow);
         getAbsensiHomeViewModel = ViewModelProviders.of(this).get(GetAbsensiHomeViewModel.class);
         loadDataAbsensi();
+        loadDataPercent();
+    }
+
+    private void loadDataPercent() {
+        String no_pegawai = systemDataLocal.getLoginData().getId_pegawai();
+        getDataPercentViewModel.getDataPercent(no_pegawai).observe(this, new Observer<DataPercentResponse>() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onChanged(DataPercentResponse dataPercentResponse) {
+                if(dataPercentResponse.getStatus()){
+                    int percent = Integer.parseInt(dataPercentResponse.getPercent());
+                    ProgressBarAnimation anim = new ProgressBarAnimation(progressBar,0,percent);
+                    anim.setDuration(1000);
+                    tv_percent.setText(percent + "%");
+                    progressBar.startAnimation(anim);
+                }
+            }
+        });
     }
 
     private void loadDataAbsensi() {
@@ -93,6 +115,7 @@ public class HomeFragment extends Fragment {
     public void onResume() {
         super.onResume();
         loadDataAbsensi();
+        loadDataPercent();
     }
 
     @Override
