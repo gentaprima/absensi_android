@@ -4,110 +4,131 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.ReportFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ui.fragment.ReportFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Laporan Kehadiran Bulan ini"
-        tools:ignore="HardcodedText,RtlCompat"
-        android:layout_marginTop="@dimen/margin_activity"
-        android:layout_marginStart="@dimen/margin_activity"
-        android:textColor="@color/black"
-        android:fontFamily="@font/capriola"
-        android:textSize="16sp"
-        />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_activity"
-            android:layout_marginTop="@dimen/margin_low"
-            android:fontFamily="@font/capriola"
-            android:text="Hadir :"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="HardcodedText,RtlCompat" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:textColor="@color/black"
-            android:fontFamily="@font/capriola"
-            android:textSize="14sp"
-            android:text="10"
-            android:layout_marginStart="60dp"
-            android:id="@+id/tv_hadir"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/textView13"
-            app:layout_constraintStart_toEndOf="@+id/textView13"
-            app:layout_constraintTop_toTopOf="@+id/textView13"
-            tools:ignore="HardcodedText,RtlCompat" />
 
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_activity"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/capriola"
-            android:text="Tidak Hadir :"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13"
-            tools:ignore="HardcodedText,RtlCompat" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:layout_marginTop="@dimen/margin_activity"
+                android:fontFamily="@font/capriola"
+                android:text="Laporan Kehadiran Bulan ini"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText,RtlCompat" />
 
-        <TextView
-            android:id="@+id/tv_tidakhadir"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/capriola"
-            android:text="10"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView16"
-            app:layout_constraintEnd_toEndOf="@+id/tv_hadir"
-            app:layout_constraintTop_toTopOf="@+id/textView16" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_low"
+                android:layout_marginTop="@dimen/margin_low"
+                android:layout_marginEnd="@dimen/margin_low"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp">
 
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_activity"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/capriola"
-            android:text="Izin :"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView16"
-            tools:ignore="HardcodedText,RtlCompat" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp">
 
-        <TextView
-            android:id="@+id/tv_izin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/capriola"
-            android:text="10"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView17"
-            app:layout_constraintEnd_toEndOf="@+id/tv_tidakhadir"
-            app:layout_constraintTop_toTopOf="@+id/textView17" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_activity"
+                        android:layout_marginTop="@dimen/margin_low"
+                        android:fontFamily="@font/capriola"
+                        android:text="Hadir :"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="HardcodedText,RtlCompat" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/rv_laporan"
-        />
+                    <TextView
+                        android:id="@+id/tv_hadir"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_activity"
+                        android:fontFamily="@font/capriola"
+                        android:text="10"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView13"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textView13"
+                        tools:ignore="HardcodedText,RtlCompat" />
 
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_activity"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/capriola"
+                        android:text="Tidak Hadir :"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView13"
+                        tools:ignore="HardcodedText,RtlCompat" />
+
+                    <TextView
+                        android:id="@+id/tv_tidakhadir"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/capriola"
+                        android:text="10"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView16"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_hadir"
+                        app:layout_constraintTop_toTopOf="@+id/textView16" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_activity"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/capriola"
+                        android:text="Izin :"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView16"
+                        tools:ignore="HardcodedText,RtlCompat" />
+
+                    <TextView
+                        android:id="@+id/tv_izin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/capriola"
+                        android:text="10"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView17"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_tidakhadir"
+                        app:layout_constraintTop_toTopOf="@+id/textView17" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_laporan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/margin_activity"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>

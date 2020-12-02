@@ -19,7 +19,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.scanner.AbsensiActivity"></activity>
+        <activity android:name=".ui.profile.ChangePasswordActivity"></activity>
+        <activity android:name=".ui.profile.ChangeEmailActivity" />
+        <activity android:name=".ui.laporan.DetailLaporanActivity" />
+        <activity android:name=".ui.gaji.DataGajiActivity" />
+        <activity android:name=".ui.scanner.AbsensiActivity" />
         <activity android:name=".ui.scanner.ScannerActivity" />
         <activity android:name=".ui.surat.tidak_hadir.TambahSuratTidakHadirActivity" />
         <activity android:name=".ui.surat.tidak_hadir.SuratTidakHadirActivity" />

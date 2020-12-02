@@ -58,6 +58,7 @@ public class ReportFragment extends Fragment {
                         tv_hadir.setText(dataLaporanResponse.getHadir());
                         tv_tidakhadir.setText(dataLaporanResponse.getTidakHadir());
                         tv_izin.setText(dataLaporanResponse.getIzin());
+                        rv_laporan.setNestedScrollingEnabled(false);
                     }
                 }
             }

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.account.SettingsActivity"
     android:background="@color/white">
 
     <LinearLayout
@@ -25,6 +24,7 @@
 
 
         <androidx.cardview.widget.CardView
+
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="@dimen/margin_activity"

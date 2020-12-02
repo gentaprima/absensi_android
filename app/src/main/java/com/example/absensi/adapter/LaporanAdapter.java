@@ -2,6 +2,7 @@ package com.example.absensi.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,10 +11,12 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.absensi.R;
 import com.example.absensi.model.laporan.DataLaporan;
+import com.example.absensi.ui.laporan.DetailLaporanActivity;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -58,6 +61,14 @@ public class LaporanAdapter extends RecyclerView.Adapter<LaporanAdapter.ViewHold
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        holder.cardLaporan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent detail = new Intent(context, DetailLaporanActivity.class);
+                detail.putExtra("data",dataLaporan);
+                context.startActivity(detail);
+            }
+        });
 
     }
 
@@ -68,10 +79,12 @@ public class LaporanAdapter extends RecyclerView.Adapter<LaporanAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tv_hari,tv_tgl;
+        CardView cardLaporan;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_hari = itemView.findViewById(R.id.tv_hari);
             tv_tgl = itemView.findViewById(R.id.tv_tgl);
+            cardLaporan = itemView.findViewById(R.id.cardLaporan);
         }
     }
 }

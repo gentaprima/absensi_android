@@ -141,6 +141,24 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView"
         tools:ignore="RtlCompat,UnusedAttribute" />
 
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_btnsubmit"
+        android:paddingLeft="10dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="10dp"
+        android:layout_marginEnd="@dimen/margin_activity"
+        android:paddingBottom="3dp"
+        android:text="Tidak Hadir"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView3"
+        tools:ignore="HardcodedText,RtlCompat" />
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

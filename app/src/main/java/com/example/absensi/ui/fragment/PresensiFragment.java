@@ -13,17 +13,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.absensi.R;
+import com.example.absensi.ui.gaji.DataGajiActivity;
 import com.example.absensi.ui.surat.tidak_hadir.SuratTidakHadirActivity;
 
 
 public class PresensiFragment extends Fragment implements View.OnClickListener {
 
-    private CardView cardTidakHadir;
+    private CardView cardTidakHadir,cardGaji;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         cardTidakHadir = view.findViewById(R.id.cardTidakHadir);
+        cardGaji = view.findViewById(R.id.cardGaji);
         cardTidakHadir.setOnClickListener(this);
+        cardGaji.setOnClickListener(this);
     }
 
     @Override
@@ -35,8 +38,14 @@ public class PresensiFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.cardTidakHadir){
-            startActivity(new Intent(getContext(), SuratTidakHadirActivity.class));
+        switch (v.getId()){
+            case R.id.cardTidakHadir:
+                startActivity(new Intent(getContext(), SuratTidakHadirActivity.class));
+                break;
+
+            case R.id.cardGaji:
+                startActivity(new Intent(getContext(), DataGajiActivity.class));
+                break;
         }
     }
 }

@@ -41,7 +41,11 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         });
 
         card_logout = findViewById(R.id.card_logout);
+        card_email = findViewById(R.id.card_email);
+        card_password = findViewById(R.id.card_password);
         card_logout.setOnClickListener(this);
+        card_email.setOnClickListener(this);
+        card_password.setOnClickListener(this);
         systemDataLocal = new SystemDataLocal(this);
 
         if(getSupportActionBar() != null){
@@ -51,9 +55,20 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.card_logout){
-            systemDataLocal.destroySessionLogin();
-            startActivity(new Intent(SettingActivity.this, LoginActivity.class));
+
+        switch (v.getId()){
+            case R.id.card_email:
+                startActivity(new Intent(SettingActivity.this,ChangeEmailActivity.class));
+                break;
+
+            case R.id.card_password:
+                startActivity(new Intent(SettingActivity.this,ChangePasswordActivity.class));
+                break;
+
+            case R.id.card_logout:
+                systemDataLocal.destroySessionLogin();
+                startActivity(new Intent(SettingActivity.this, LoginActivity.class));
+                break;
         }
     }
 }

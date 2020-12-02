@@ -4,10 +4,13 @@ package com.example.absensi.network.api;
 import com.example.absensi.model.MessageOnly;
 import com.example.absensi.model.absensi.AbsensiResponse;
 import com.example.absensi.model.absensi.DataPercentResponse;
+import com.example.absensi.model.gaji.DataGajiResponse;
+import com.example.absensi.model.gaji.TotalUangMakanResponse;
 import com.example.absensi.model.laporan.DataLaporanResponse;
 import com.example.absensi.model.login.ResponseLogin;
 import com.example.absensi.model.profile.ResponseProfile;
 import com.example.absensi.model.register.ResponseRegister;
+import com.example.absensi.model.surat.SuratIzinResponse;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -64,5 +67,23 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("absensi/getPercentAbsensi")
     Call<DataPercentResponse> getDataPercent(@Field("no_pegawai") String no_pegawai);
+
+    @FormUrlEncoded
+    @POST("absensi/getTotalUangMakan")
+    Call<TotalUangMakanResponse> getTotalUangMakan(@Field("no_pegawai")String no_pegawai);
+
+    @FormUrlEncoded
+    @POST("absensi/getGajiUangMakan")
+    Call<DataGajiResponse> getDataGaji(@Field("no_pegawai")String no_pegawai);
+
+    @Multipart
+    @POST("surat/addSuratIzin")
+    Call<MessageOnly> addSuratIzin(@Part MultipartBody.Part image,
+                                   @Part("alasan")RequestBody alasan,
+                                   @Part("id_users")RequestBody id_users);
+
+    @FormUrlEncoded
+    @POST("surat/getDataSuratIzin")
+    Call<SuratIzinResponse> getDataSuratIzin(@Field("id_users") String id_users);
 
 }

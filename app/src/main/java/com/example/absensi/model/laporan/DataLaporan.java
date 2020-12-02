@@ -1,9 +1,12 @@
 package com.example.absensi.model.laporan;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class DataLaporan {
+public class DataLaporan implements Parcelable {
     @SerializedName("id_absensi")
     @Expose
     private String idAbsensi;
@@ -103,4 +106,49 @@ public class DataLaporan {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.idAbsensi);
+        dest.writeString(this.idUsers);
+        dest.writeString(this.checkIn);
+        dest.writeString(this.checkOut);
+        dest.writeString(this.late);
+        dest.writeString(this.workTime);
+        dest.writeString(this.date);
+        dest.writeString(this.isLate);
+        dest.writeString(this.status);
+    }
+
+    public DataLaporan() {
+    }
+
+    protected DataLaporan(Parcel in) {
+        this.idAbsensi = in.readString();
+        this.idUsers = in.readString();
+        this.checkIn = in.readString();
+        this.checkOut = in.readString();
+        this.late = in.readString();
+        this.workTime = in.readString();
+        this.date = in.readString();
+        this.isLate = in.readString();
+        this.status = in.readString();
+    }
+
+    public static final Parcelable.Creator<DataLaporan> CREATOR = new Parcelable.Creator<DataLaporan>() {
+        @Override
+        public DataLaporan createFromParcel(Parcel source) {
+            return new DataLaporan(source);
+        }
+
+        @Override
+        public DataLaporan[] newArray(int size) {
+            return new DataLaporan[size];
+        }
+    };
 }

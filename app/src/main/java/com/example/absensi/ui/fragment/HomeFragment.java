@@ -34,7 +34,7 @@ import java.util.Locale;
 public class HomeFragment extends Fragment {
 
     SystemDataLocal systemDataLocal;
-    TextView name,tv_date,tv_checkin,tv_checkout,tv_late,tv_worktime,tv_percent;
+    TextView name,tv_date,tv_checkin,tv_checkout,tv_late,tv_worktime,tv_percent,tv_status;
     Context context;
     ProgressBar  progressBar;
     private GetAbsensiHomeViewModel getAbsensiHomeViewModel;
@@ -54,6 +54,7 @@ public class HomeFragment extends Fragment {
         tv_worktime = view.findViewById(R.id.tv_worktime);
         tv_date = view.findViewById(R.id.tv_date);
         tv_percent = view.findViewById(R.id.tv_percent);
+        tv_status = view.findViewById(R.id.tv_status);
         getDataPercentViewModel = ViewModelProviders.of(this).get(GetDataPercentViewModel.class);
         LocalDateTime ldt = LocalDateTime.now();
         Locale id = new Locale("in","ID");
@@ -99,6 +100,12 @@ public class HomeFragment extends Fragment {
                         tv_checkout.setText(absensiResponse.getDataAbsensi().getCheckOut());
                         tv_late.setText(absensiResponse.getDataAbsensi().getLate());
                         tv_worktime.setText(absensiResponse.getDataAbsensi().getWorkTime());
+                        String status = absensiResponse.getDataAbsensi().getStatus();
+                        if(status.equals("Tidak")){
+                            tv_status.setText("Tidak Hadir");
+                        }else{
+                            tv_status.setText(status);
+                        }
                     }else{
                         tv_checkin.setText("00:00:00");
                         tv_checkout.setText("00:00:00");
