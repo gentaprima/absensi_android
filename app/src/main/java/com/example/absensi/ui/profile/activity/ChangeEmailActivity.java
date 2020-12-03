@@ -45,6 +45,13 @@ public class ChangeEmailActivity extends AppCompatActivity implements View.OnCli
         edt_oldEmail = findViewById(R.id.edt_oldEmail);
         btn_update = findViewById(R.id.btn_update);
         btn_update.setOnClickListener(this);
+        toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         systemDataLocal = new SystemDataLocal(this);
         changeEmailViewModel = ViewModelProviders.of(this).get(ChangeEmailViewModel.class);
