@@ -1,4 +1,4 @@
-package com.example.absensi.ui.profile;
+package com.example.absensi.ui.profile.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.example.absensi.R;
 import com.example.absensi.session.SystemDataLocal;
-import com.example.absensi.ui.home.HomeActivity;
 import com.example.absensi.ui.login.LoginActivity;
 
 public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
@@ -58,11 +57,11 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
         switch (v.getId()){
             case R.id.card_email:
-                startActivity(new Intent(SettingActivity.this,ChangeEmailActivity.class));
+                startActivity(new Intent(SettingActivity.this, ChangeEmailActivity.class));
                 break;
 
             case R.id.card_password:
-                startActivity(new Intent(SettingActivity.this,ChangePasswordActivity.class));
+                startActivity(new Intent(SettingActivity.this, ChangePasswordActivity.class));
                 break;
 
             case R.id.card_logout:

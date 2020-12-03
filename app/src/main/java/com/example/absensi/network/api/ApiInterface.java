@@ -86,4 +86,18 @@ public interface ApiInterface {
     @POST("surat/getDataSuratIzin")
     Call<SuratIzinResponse> getDataSuratIzin(@Field("id_users") String id_users);
 
+    @FormUrlEncoded
+    @POST("users/changePassword")
+    Call<MessageOnly> changePassword(@Field("id_users")String id_users,
+                                     @Field("old_password")String old_password,
+                                     @Field("new_password")String new_password,
+                                     @Field("confirm_password")String confirm_password);
+
+    @FormUrlEncoded
+    @POST("users/changeEmail")
+    Call<MessageOnly> changeEmail(@Field("id_users")String id_users,
+                                  @Field("old_email")String old_email,
+                                  @Field("new_email")String new_email,
+                                  @Field("confirm_email")String confirm_email);
+
 }

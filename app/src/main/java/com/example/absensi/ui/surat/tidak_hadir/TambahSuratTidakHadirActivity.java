@@ -32,8 +32,11 @@ import com.example.absensi.session.SystemDataLocal;
 import com.example.absensi.utils.DialogClass;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 import okhttp3.MediaType;
@@ -83,9 +86,12 @@ public class TambahSuratTidakHadirActivity extends AppCompatActivity implements 
             }
         });
         tv_title.setText("Form Surat Pernyataan");
-        LocalDateTime ldt = LocalDateTime.now();
-        Locale id = new Locale("in","ID");
-        String dateNow = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", id).format(ldt);
+//        LocalDateTime ldt = LocalDateTime.now();
+//        Locale id = new Locale("in","ID");
+//        String dateNow = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", id).format(ldt);
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("EEEE, dd MMMM yyyy", Locale.getDefault());
+        String dateNow = df.format(c);
         edtTanggal.setText(dateNow);
         edtNama.setText(systemDataLocal.getLoginData().getFull_name());
         btnImage = findViewById(R.id.buttonImage);

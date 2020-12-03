@@ -70,8 +70,11 @@ public class AbsensiActivity extends AppCompatActivity implements View.OnClickLi
         tv_title.setText("Detail Absensi");
         tv_namapegawai.setText(systemDataLocal.getLoginData().getFull_name());
         tv_idpegawai.setText(systemDataLocal.getLoginData().getId_pegawai());
-        LocalDateTime ldt = LocalDateTime.now();
-        String dateNow = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH).format(ldt);
+//        LocalDateTime ldt = LocalDateTime.now();
+//        String dateNow = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH).format(ldt);
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        String dateNow = df.format(c);
         @SuppressLint("SimpleDateFormat") SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
         @SuppressLint("SimpleDateFormat") SimpleDateFormat format2 = new SimpleDateFormat("dd-MMMM-yyyy");
         Date dateTime = new Date();

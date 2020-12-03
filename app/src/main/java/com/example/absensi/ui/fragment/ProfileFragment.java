@@ -2,13 +2,11 @@ package com.example.absensi.ui.fragment;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,7 +16,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.provider.MediaStore;
@@ -38,15 +35,12 @@ import com.example.absensi.network.Constanta;
 import com.example.absensi.session.SystemDataLocal;
 import com.example.absensi.ui.home.HomeActivity;
 import com.example.absensi.ui.profile.ChangePictureViewModel;
-import com.example.absensi.ui.profile.UpdateProfileActivity;
+import com.example.absensi.ui.profile.activity.UpdateProfileActivity;
 import com.example.absensi.utils.DialogClass;
 
 import java.io.File;
-import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 import okhttp3.MediaType;

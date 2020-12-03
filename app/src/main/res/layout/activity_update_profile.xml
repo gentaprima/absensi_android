@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorGray2"
     android:orientation="vertical"
-    tools:context=".ui.profile.UpdateProfileActivity">
+    tools:context=".ui.profile.activity.UpdateProfileActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

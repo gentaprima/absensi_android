@@ -27,8 +27,11 @@ import com.example.absensi.ui.home.GetAbsensiHomeViewModel;
 import com.example.absensi.ui.home.GetDataPercentViewModel;
 import com.example.absensi.utils.ProgressBarAnimation;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 public class HomeFragment extends Fragment {
@@ -56,9 +59,12 @@ public class HomeFragment extends Fragment {
         tv_percent = view.findViewById(R.id.tv_percent);
         tv_status = view.findViewById(R.id.tv_status);
         getDataPercentViewModel = ViewModelProviders.of(this).get(GetDataPercentViewModel.class);
-        LocalDateTime ldt = LocalDateTime.now();
-        Locale id = new Locale("in","ID");
-        String dateNow = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", id).format(ldt);
+//        LocalDateTime ldt = LocalDateTime.now();
+//        Locale id = new Locale("in","ID");
+//        String dateNow = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", id).format(ldt);
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("EEEE, dd MMMM yyyy", Locale.getDefault());
+        String dateNow = df.format(c);
         name.setText(split[0]);
         progressBar = view.findViewById(R.id.progressbar);
 

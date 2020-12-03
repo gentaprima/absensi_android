@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,8 +23,7 @@ import com.example.absensi.ui.fragment.HomeFragment;
 import com.example.absensi.ui.fragment.PresensiFragment;
 import com.example.absensi.ui.fragment.ProfileFragment;
 import com.example.absensi.ui.fragment.ReportFragment;
-import com.example.absensi.ui.login.LoginActivity;
-import com.example.absensi.ui.profile.SettingActivity;
+import com.example.absensi.ui.profile.activity.SettingActivity;
 import com.example.absensi.ui.scanner.ScannerActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 

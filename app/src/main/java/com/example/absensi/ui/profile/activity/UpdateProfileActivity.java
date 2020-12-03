@@ -1,13 +1,11 @@
-package com.example.absensi.ui.profile;
+package com.example.absensi.ui.profile.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.room.Update;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -16,10 +14,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.absensi.R;
-import com.example.absensi.model.Users;
 import com.example.absensi.model.profile.ResponseProfile;
 import com.example.absensi.session.SystemDataLocal;
-import com.example.absensi.ui.home.HomeActivity;
+import com.example.absensi.ui.profile.UpdateProfileViewModel;
 import com.example.absensi.utils.DatePicker;
 import com.example.absensi.utils.DialogClass;
 
