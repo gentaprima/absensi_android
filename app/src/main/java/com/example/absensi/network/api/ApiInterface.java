@@ -10,6 +10,7 @@ import com.example.absensi.model.laporan.DataLaporanResponse;
 import com.example.absensi.model.login.ResponseLogin;
 import com.example.absensi.model.profile.ResponseProfile;
 import com.example.absensi.model.register.ResponseRegister;
+import com.example.absensi.model.surat.CutiResponse;
 import com.example.absensi.model.surat.SuratIzinResponse;
 
 import okhttp3.MultipartBody;
@@ -99,5 +100,16 @@ public interface ApiInterface {
                                   @Field("old_email")String old_email,
                                   @Field("new_email")String new_email,
                                   @Field("confirm_email")String confirm_email);
+
+    @FormUrlEncoded
+    @POST("surat/addSuratCuti")
+    Call<MessageOnly> addSuratCuti(@Field("keterangan")String keterangan,
+                                   @Field("start_date")String startDate,
+                                   @Field("end_date")String endDate,
+                                   @Field("id_users")String idUsers);
+
+    @FormUrlEncoded
+    @POST("surat/getDataCuti")
+    Call<CutiResponse> getDataCuti(@Field("id_users")String idUsers);
 
 }

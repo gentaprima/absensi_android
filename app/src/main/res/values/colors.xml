@@ -14,5 +14,6 @@
     <color name="low_grey">#E6E4E4</color>
     <color name="grey">#444343</color>
     <color name="red">#FF0000</color>
+    <color name="orange">#FF5722</color>
     <color name="transparent">#00FF0000</color>
 </resources>

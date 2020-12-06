@@ -78,6 +78,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardCuti"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_marginStart="@dimen/margin_activity"
@@ -118,6 +119,7 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
+
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/margin_low"
