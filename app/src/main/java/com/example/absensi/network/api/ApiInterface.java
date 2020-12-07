@@ -112,4 +112,8 @@ public interface ApiInterface {
     @POST("surat/getDataCuti")
     Call<CutiResponse> getDataCuti(@Field("id_users")String idUsers);
 
+    @FormUrlEncoded
+    @POST("surat/cancelCuti")
+    Call<MessageOnly> cancelCuti(@Field("id_cuti")String id_cuti);
+
 }

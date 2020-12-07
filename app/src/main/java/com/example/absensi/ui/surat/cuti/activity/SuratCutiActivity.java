@@ -1,4 +1,4 @@
-package com.example.absensi.ui.surat.cuti;
+package com.example.absensi.ui.surat.cuti.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -15,6 +15,7 @@ import com.example.absensi.R;
 import com.example.absensi.adapter.SuratCutiAdapter;
 import com.example.absensi.model.surat.CutiResponse;
 import com.example.absensi.session.SystemDataLocal;
+import com.example.absensi.ui.surat.cuti.GetDataCutiViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class SuratCutiActivity extends AppCompatActivity {
@@ -37,7 +38,7 @@ public class SuratCutiActivity extends AppCompatActivity {
         floatAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SuratCutiActivity.this,AddCutiActivity.class));
+                startActivity(new Intent(SuratCutiActivity.this, AddCutiActivity.class));
             }
         });
 

@@ -8,10 +8,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.absensi.R;
 import com.example.absensi.model.surat.DataCuti;
+import com.example.absensi.ui.surat.cuti.activity.DetailCutiActivity;
 
 import java.util.List;
 
@@ -52,6 +54,15 @@ public class SuratCutiAdapter extends RecyclerView.Adapter<SuratCutiAdapter.View
             holder.tv_status_primary.setVisibility(View.VISIBLE);
             holder.tv_status_danger.setVisibility(View.GONE);
         }
+        holder.cardCuti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent detail = new Intent(context, DetailCutiActivity.class);
+                detail.putExtra("data",dataCuti);
+                detail.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(detail);
+            }
+        });
     }
 
     @Override
@@ -62,6 +73,7 @@ public class SuratCutiAdapter extends RecyclerView.Adapter<SuratCutiAdapter.View
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tv_number,tv_start,tv_end,tv_status_primary,tv_status_warning,tv_status_danger;
+        CardView cardCuti;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_number = itemView.findViewById(R.id.tv_number);
@@ -70,6 +82,7 @@ public class SuratCutiAdapter extends RecyclerView.Adapter<SuratCutiAdapter.View
             tv_status_primary = itemView.findViewById(R.id.tv_status_primary);
             tv_status_warning = itemView.findViewById(R.id.tv_status_warning);
             tv_status_danger = itemView.findViewById(R.id.tv_status_danger);
+            cardCuti = itemView.findViewById(R.id.cardCuti);
         }
     }
 }

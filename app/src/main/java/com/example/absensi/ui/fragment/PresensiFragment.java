@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 
 import com.example.absensi.R;
 import com.example.absensi.ui.gaji.DataGajiActivity;
-import com.example.absensi.ui.surat.cuti.SuratCutiActivity;
+import com.example.absensi.ui.surat.cuti.activity.SuratCutiActivity;
 import com.example.absensi.ui.surat.tidak_hadir.SuratTidakHadirActivity;
 
 
