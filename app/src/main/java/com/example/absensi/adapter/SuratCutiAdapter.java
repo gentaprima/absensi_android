@@ -45,12 +45,12 @@ public class SuratCutiAdapter extends RecyclerView.Adapter<SuratCutiAdapter.View
             holder.tv_status_danger.setVisibility(View.GONE);
         }else if(status.equals("1")){
             holder.tv_status_warning.setVisibility(View.GONE);
-            holder.tv_status_primary.setVisibility(View.VISIBLE);
-            holder.tv_status_danger.setVisibility(View.GONE);
-        }else if(status.equals("2")){
-            holder.tv_status_warning.setVisibility(View.GONE);
             holder.tv_status_primary.setVisibility(View.GONE);
             holder.tv_status_danger.setVisibility(View.VISIBLE);
+        }else if(status.equals("2")){
+            holder.tv_status_warning.setVisibility(View.GONE);
+            holder.tv_status_primary.setVisibility(View.VISIBLE);
+            holder.tv_status_danger.setVisibility(View.GONE);
         }
     }
 

@@ -113,6 +113,7 @@ public class AbsensiActivity extends AppCompatActivity implements View.OnClickLi
                     alertDialog.dismiss();
                     Toast.makeText(getApplicationContext(),messageOnly.getMessage(),Toast.LENGTH_LONG).show();
                     startActivity(new Intent(AbsensiActivity.this, HomeActivity.class));
+                    finish();
                 }
             }
         });
