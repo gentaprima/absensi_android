@@ -1,6 +1,7 @@
 package com.example.absensi.ui.surat.cuti.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -29,6 +30,12 @@ public class SuratCutiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_surat_cuti);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        TextView tv_title = findViewById(R.id.title);
+        tv_title.setText("Daftar Surat Cuti");
+
+
         floatAdd = findViewById(R.id.floatAdd);
         tvSisaCuti = findViewById(R.id.tvSisaCuti);
         tv_notif_kosong = findViewById(R.id.tv_notif_kosong);
@@ -44,6 +51,16 @@ public class SuratCutiActivity extends AppCompatActivity {
 
         systemDataLocal = new SystemDataLocal(this);
         getDataCutiViewModel = ViewModelProviders.of(this).get(GetDataCutiViewModel.class);
+        if(getSupportActionBar() != null){
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
+        toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         loadData();
     }

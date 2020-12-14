@@ -26,6 +26,11 @@ public class SuratIzinAdapter extends RecyclerView.Adapter<SuratIzinAdapter.View
 
     private Context context;
     private List<DataSuratIzin> listData;
+    private OnItemClickCallBack onItemClickCallback;
+
+    public void setOnItemClickCallback(OnItemClickCallBack onItemClickCallback){
+        this.onItemClickCallback = onItemClickCallback;
+    }
 
     public SuratIzinAdapter(Context context, List<DataSuratIzin> listData) {
         this.context = context;
@@ -64,6 +69,12 @@ public class SuratIzinAdapter extends RecyclerView.Adapter<SuratIzinAdapter.View
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        holder.cardLaporan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickCallback.onItemClicked(dataSuratIzin);
+            }
+        });
     }
 
     @Override
@@ -80,6 +91,10 @@ public class SuratIzinAdapter extends RecyclerView.Adapter<SuratIzinAdapter.View
             tv_tgl = itemView.findViewById(R.id.tv_tanggal);
             tv_status = itemView.findViewById(R.id.tv_status);
             tv_alasan = itemView.findViewById(R.id.tv_alasan);
+            cardLaporan = itemView.findViewById(R.id.cardLaporan);
         }
+    }
+    public interface OnItemClickCallBack{
+        void onItemClicked(DataSuratIzin dataSuratIzin);
     }
 }

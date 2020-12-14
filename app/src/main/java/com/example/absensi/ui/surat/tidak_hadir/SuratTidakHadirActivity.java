@@ -8,15 +8,22 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.absensi.R;
 import com.example.absensi.adapter.SuratIzinAdapter;
 import com.example.absensi.model.surat.DataSuratIzin;
 import com.example.absensi.model.surat.SuratIzinResponse;
+import com.example.absensi.network.Constanta;
 import com.example.absensi.session.SystemDataLocal;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -30,6 +37,10 @@ public class SuratTidakHadirActivity extends AppCompatActivity {
     private GetDataSuratIzinViewModel getDataSuratIzinViewModel;
     private SystemDataLocal systemDataLocal;
     RecyclerView rv_surat;
+    AlertDialog.Builder builder;
+    View myview,dialogView;
+    ImageView imageGallery;
+    Button btn_cancel;
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +85,7 @@ public class SuratTidakHadirActivity extends AppCompatActivity {
                         rv_surat.setVisibility(View.VISIBLE);
                         readData(suratIzinResponse.getDataSuratizin());
 
+
                     }else{
                         rv_surat.setVisibility(View.GONE);
                         tv_notif_kosong.setVisibility(View.VISIBLE);
@@ -88,6 +100,34 @@ public class SuratTidakHadirActivity extends AppCompatActivity {
         RecyclerView.LayoutManager lm = new LinearLayoutManager(this);
         rv_surat.setLayoutManager(lm);
         rv_surat.setAdapter(suratIzinAdapter);
+        suratIzinAdapter.setOnItemClickCallback(new SuratIzinAdapter.OnItemClickCallBack() {
+            @Override
+            public void onItemClicked(DataSuratIzin dataSuratIzin) {
+                displayDialog(dataSuratIzin);
+            }
+        });
+    }
+
+    private void displayDialog(DataSuratIzin dataSuratIzin) {
+        builder = new AlertDialog.Builder(this);
+        myview = getLayoutInflater().inflate(R.layout.dialog_izin,null,false);
+        builder.setView(myview);
+        btn_cancel = myview.findViewById(R.id.btn_cancel);
+        imageGallery = myview.findViewById(R.id.imageGallery);
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //cancel
+            }
+        });
+        if(dataSuratIzin.getStatusSurat().equals("0")){
+            btn_cancel.setVisibility(View.GONE);
+//            btn_cancel.setVisibility(View.VISIBLE);
+        }else{
+            btn_cancel.setVisibility(View.GONE);
+        }
+        Glide.with(this).load(Constanta.BASE_URL_IMG_IZIN + dataSuratIzin.getBukti()).into(imageGallery);
+        builder.show();
     }
 
     @Override

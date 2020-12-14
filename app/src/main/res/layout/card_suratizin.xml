@@ -8,6 +8,7 @@
     android:layout_marginStart="@dimen/margin_activity"
     android:layout_marginEnd="@dimen/margin_activity"
     app:cardCornerRadius="30dp"
+    android:id="@+id/cardLaporan"
     app:cardBackgroundColor="@color/low_grey">
 
         <androidx.constraintlayout.widget.ConstraintLayout

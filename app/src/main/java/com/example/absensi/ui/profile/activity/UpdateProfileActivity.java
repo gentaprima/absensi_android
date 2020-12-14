@@ -1,6 +1,7 @@
 package com.example.absensi.ui.profile.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -11,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.absensi.R;
@@ -35,7 +37,10 @@ public class UpdateProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_profile);
 
-
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        TextView tv_title = findViewById(R.id.title);
+        tv_title.setText("Update Profile");
         updateProfileViewModel = ViewModelProviders.of(this).get(UpdateProfileViewModel.class);
         systemDataLocal = new SystemDataLocal(this);
         id_pegawai = systemDataLocal.getLoginData().getId_pegawai();
@@ -43,6 +48,17 @@ public class UpdateProfileActivity extends AppCompatActivity {
         tgl_lahir = systemDataLocal.getLoginData().getTgl_lahir();
         jk = systemDataLocal.getLoginData().getJenis_kelamin();
         alamat = systemDataLocal.getLoginData().getAlamat();
+
+        if(getSupportActionBar() != null){
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
+        toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         edt_idpegawai = findViewById(R.id.edt_idpegawai);
         edt_notelepon = findViewById(R.id.edt_notelepon);

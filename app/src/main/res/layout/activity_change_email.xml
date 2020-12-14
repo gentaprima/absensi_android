@@ -29,15 +29,15 @@
 
         <ImageView
             android:id="@+id/images"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:contentDescription="@string/todo"
-            android:src="@drawable/ic_dashboard_black_24dp" />
+            android:src="@drawable/message" />
 
         <TextView
-            android:layout_marginTop="@dimen/margin_low"
+            android:layout_marginTop="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/images"

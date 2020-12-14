@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">absensi</string>
+    <string name="app_name">RPM Presensi</string>
     <string name="welcome">WELCOME</string>
     <string name="email">Email</string>
     <string name="password">Password</string>

@@ -54,7 +54,7 @@
                     android:layout_marginEnd="@dimen/margin_activity"
                     android:fontFamily="@font/capriola"
                     android:gravity="center_horizontal"
-                    android:text="Form Surat Pernyataan"
+                    android:text="Form Surat Cuti"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     tools:ignore="HardcodedText" />

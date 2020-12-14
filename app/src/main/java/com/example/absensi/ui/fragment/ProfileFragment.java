@@ -54,7 +54,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     private SystemDataLocal systemDataLocal;
     private Context context;
-    TextView tv_name,tv_email,tv_phone,tv_date,tv_jk,tv_addres,tv_id;
+    TextView tv_name,tv_email,tv_phone,tv_date,tv_jk,tv_addres,tv_id,tv_jabatan;
     Button btn_update;
     String id_pegawai,no_telp,tgl_lahir,jk,alamat,id_users;
     Users users;
@@ -83,6 +83,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         tv_phone = view.findViewById(R.id.tv_phone);
         tv_jk = view.findViewById(R.id.tv_jk);
         tv_id = view.findViewById(R.id.tv_id);
+        tv_jabatan = view.findViewById(R.id.tv_jabatan);
         tv_addres = view.findViewById(R.id.tv_alamat);
         btn_update = view.findViewById(R.id.button_update);
         profile_image = view.findViewById(R.id.profile_image);
@@ -100,7 +101,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         tv_name.setText(users.getFull_name());
         tv_email.setText(users.getEmail());
         tv_phone.setText(users.getPhone());
-
+        tv_jabatan.setText(users.getNama_jabatan());
 
         tv_jk.setText(users.getJenis_kelamin());
         tv_id.setText(users.getId_pegawai());
