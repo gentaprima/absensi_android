@@ -114,7 +114,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     case R.id.nav_presensi:
                         fm.beginTransaction().hide(active).show(fragmentPresensi).commit();
                         active = fragmentPresensi;
-                        title.setText("Presensi");
+                        title.setText("Data Master");
                         iv_logout.setVisibility(View.GONE);
                         return true;
 

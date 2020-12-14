@@ -104,10 +104,11 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
+
                 android:id="@+id/kehadiran"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="@dimen/margin_activity"
                 android:layout_toEndOf="@id/containerProgress"
                 android:fontFamily="@font/capriola"
                 android:text="@string/kehadiran_mu_sebulan_ini"
@@ -116,16 +117,16 @@
                 android:textStyle="bold"
                 tools:ignore="RtlCompat" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/kehadiran"
-                android:layout_toEndOf="@id/containerProgress"
-                android:text="Meningkat 5% dari bulan lalu"
-                android:textSize="13sp"
-                tools:ignore="HardcodedText,RtlCompat"
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@id/kehadiran"-->
+<!--                android:layout_toEndOf="@id/containerProgress"-->
+<!--                android:text="Meningkat 5% dari bulan lalu"-->
+<!--                android:textSize="13sp"-->
+<!--                tools:ignore="HardcodedText,RtlCompat"-->
 
-                />
+<!--                />-->
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

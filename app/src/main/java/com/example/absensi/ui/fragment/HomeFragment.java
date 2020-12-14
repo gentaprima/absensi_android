@@ -62,15 +62,17 @@ public class HomeFragment extends Fragment {
 //        LocalDateTime ldt = LocalDateTime.now();
 //        Locale id = new Locale("in","ID");
 //        String dateNow = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", id).format(ldt);
-        Date c = Calendar.getInstance().getTime();
-        SimpleDateFormat df = new SimpleDateFormat("EEEE, dd MMMM yyyy", Locale.getDefault());
-        String dateNow = df.format(c);
         name.setText(split[0]);
+
+        Date c = Calendar.getInstance().getTime();
+
+        SimpleDateFormat df = new SimpleDateFormat("EEEE, dd MMMM yyyy", Locale.getDefault());
+        String formattedDate = df.format(c);
         progressBar = view.findViewById(R.id.progressbar);
 
 
 
-        tv_date.setText(dateNow);
+        tv_date.setText(formattedDate);
         getAbsensiHomeViewModel = ViewModelProviders.of(this).get(GetAbsensiHomeViewModel.class);
         loadDataAbsensi();
         loadDataPercent();

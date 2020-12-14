@@ -86,13 +86,11 @@ public class TambahSuratTidakHadirActivity extends AppCompatActivity implements 
             }
         });
         tv_title.setText("Form Surat Pernyataan");
-//        LocalDateTime ldt = LocalDateTime.now();
-//        Locale id = new Locale("in","ID");
-//        String dateNow = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", id).format(ldt);
         Date c = Calendar.getInstance().getTime();
+
         SimpleDateFormat df = new SimpleDateFormat("EEEE, dd MMMM yyyy", Locale.getDefault());
-        String dateNow = df.format(c);
-        edtTanggal.setText(dateNow);
+        String formattedDate = df.format(c);
+        edtTanggal.setText(formattedDate);
         edtNama.setText(systemDataLocal.getLoginData().getFull_name());
         btnImage = findViewById(R.id.buttonImage);
         btnSubmit = findViewById(R.id.btn_submit);

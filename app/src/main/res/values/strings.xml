@@ -13,7 +13,7 @@
     <string name="login">Login</string>
     <string name="silahkan_tunggu">Silahkan Tunggu</string>
     <string name="home">Home</string>
-    <string name="presensi">Presensi</string>
+    <string name="presensi">Data Master</string>
     <string name="laporan">Laporan</string>
     <string name="abensi">Absensi</string>
     <string name="account">Profile</string>
@@ -21,7 +21,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hi">Hi,</string>
     <string name="vinita">Vinita</string>
-    <string name="welcome_back">Welcome Back</string>
+    <string name="welcome_back">Selamat Datang</string>
     <string name="kehadiran_mu_sebulan_ini">Kehadiran mu sebulan ini</string>
     <string name="aktivitas">Aktivitas</string>
     <string name="vinita_sandri">Vinita Sandri</string>

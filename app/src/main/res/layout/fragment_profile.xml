@@ -70,205 +70,205 @@
         android:layout_marginTop="@dimen/margin_activity"
         >
 
-     <androidx.constraintlayout.widget.ConstraintLayout
-         android:layout_width="match_parent"
-         android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-         <de.hdodenhof.circleimageview.CircleImageView
-             android:id="@+id/circleImageView"
-             android:layout_width="40dp"
-             android:layout_height="40dp"
-             android:layout_marginStart="@dimen/margin_activity"
-             android:layout_marginTop="@dimen/margin_activity"
-             android:src="@drawable/ic_id"
-             app:layout_constraintStart_toStartOf="parent"
-             tools:ignore="RtlCompat" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:layout_marginTop="@dimen/margin_activity"
+                android:src="@drawable/ic_id"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="RtlCompat" />
 
-         <TextView
-             android:id="@+id/textView4"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginStart="@dimen/margin_activity"
-             android:text="ID Pegawai"
-             android:textSize="10sp"
-             app:layout_constraintStart_toEndOf="@+id/circleImageView"
-             app:layout_constraintTop_toTopOf="@+id/circleImageView"
-             tools:ignore="RtlCompat" />
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:text="ID Pegawai"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/circleImageView"
+                app:layout_constraintTop_toTopOf="@+id/circleImageView"
+                tools:ignore="RtlCompat" />
 
-         <TextView
-             android:id="@+id/tv_id"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginStart="@dimen/margin_activity"
-             android:layout_marginLeft="@dimen/margin_activity"
-             android:text="@string/id"
-             android:textColor="@color/black"
-             android:textSize="18sp"
-             app:layout_constraintStart_toEndOf="@+id/circleImageView"
-             app:layout_constraintTop_toBottomOf="@+id/textView4"
-             tools:ignore="RtlCompat" />
+            <TextView
+                android:id="@+id/tv_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:layout_marginLeft="@dimen/margin_activity"
+                android:text="@string/id"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/circleImageView"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                tools:ignore="RtlCompat" />
 
-         <de.hdodenhof.circleimageview.CircleImageView
-             android:id="@+id/circleImageView2"
-             android:layout_width="40dp"
-             android:layout_height="40dp"
-             android:layout_marginStart="@dimen/margin_activity"
-             android:layout_marginTop="@dimen/margin_activity"
-             android:src="@drawable/ic_call"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toBottomOf="@+id/circleImageView"
-             tools:ignore="RtlCompat" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:layout_marginTop="@dimen/margin_activity"
+                android:src="@drawable/ic_call"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+                tools:ignore="RtlCompat" />
 
-         <TextView
-             android:id="@+id/textView6"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginStart="@dimen/margin_activity"
-             android:layout_marginTop="@dimen/margin_activity"
-             android:text="@string/no_telepon"
-             android:textSize="10sp"
-             app:layout_constraintStart_toEndOf="@+id/circleImageView2"
-             app:layout_constraintTop_toBottomOf="@+id/circleImageView"
-             tools:ignore="RtlCompat" />
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:layout_marginTop="@dimen/margin_activity"
+                android:text="@string/no_telepon"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/circleImageView2"
+                app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+                tools:ignore="RtlCompat" />
 
-         <TextView
-             android:id="@+id/tv_phone"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginStart="@dimen/margin_activity"
-             android:text="@string/id"
-             android:textColor="@color/black"
-             android:textSize="18sp"
-             app:layout_constraintStart_toEndOf="@+id/circleImageView2"
-             app:layout_constraintTop_toBottomOf="@+id/textView6"
-             tools:ignore="RtlCompat" />
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:text="@string/id"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/circleImageView2"
+                app:layout_constraintTop_toBottomOf="@+id/textView6"
+                tools:ignore="RtlCompat" />
 
-         <de.hdodenhof.circleimageview.CircleImageView
-             android:id="@+id/circleImageView3"
-             android:layout_width="40dp"
-             android:layout_height="40dp"
-             android:layout_marginStart="@dimen/margin_activity"
-             android:layout_marginTop="@dimen/margin_activity"
-             android:src="@drawable/ic_calendar"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toBottomOf="@+id/circleImageView2"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:layout_marginTop="@dimen/margin_activity"
+                android:src="@drawable/ic_calendar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/circleImageView2"
 
-             tools:ignore="RtlCompat" />
+                tools:ignore="RtlCompat" />
 
-         <TextView
-             android:id="@+id/textView8"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginStart="@dimen/margin_activity"
-             android:layout_marginTop="@dimen/margin_activity"
-             android:text="@string/date"
-             android:textSize="10sp"
-             app:layout_constraintStart_toEndOf="@+id/circleImageView3"
-             app:layout_constraintTop_toBottomOf="@+id/tv_phone"
-             tools:ignore="RtlCompat" />
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:layout_marginTop="@dimen/margin_activity"
+                android:text="@string/date"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/circleImageView3"
+                app:layout_constraintTop_toBottomOf="@+id/tv_phone"
+                tools:ignore="RtlCompat" />
 
-         <TextView
-             android:id="@+id/tv_date"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginStart="@dimen/margin_activity"
-             android:layout_marginTop="5dp"
-             android:text="@string/id"
-             android:textColor="@color/black"
-             android:textSize="18sp"
-             app:layout_constraintStart_toEndOf="@+id/circleImageView3"
-             app:layout_constraintTop_toBottomOf="@+id/textView8"
-             tools:ignore="RtlCompat" />
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:layout_marginTop="5dp"
+                android:text="@string/id"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/circleImageView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView8"
+                tools:ignore="RtlCompat" />
 
-         <de.hdodenhof.circleimageview.CircleImageView
-             android:id="@+id/circleImageView4"
-             android:layout_width="40dp"
-             android:layout_height="40dp"
-             android:layout_marginStart="@dimen/margin_activity"
-             android:layout_marginTop="@dimen/margin_activity"
-             android:src="@drawable/ic_gender"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toBottomOf="@+id/circleImageView3"
-             tools:ignore="RtlCompat" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:layout_marginTop="@dimen/margin_activity"
+                android:src="@drawable/ic_gender"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/circleImageView3"
+                tools:ignore="RtlCompat" />
 
-         <TextView
-             android:id="@+id/textView10"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginStart="@dimen/margin_activity"
-             android:layout_marginTop="@dimen/margin_activity"
-             android:text="@string/gender"
-             android:textSize="10sp"
-             app:layout_constraintStart_toEndOf="@+id/circleImageView3"
-             app:layout_constraintTop_toBottomOf="@+id/tv_date"
-             tools:ignore="RtlCompat" />
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:layout_marginTop="@dimen/margin_activity"
+                android:text="@string/gender"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/circleImageView3"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date"
+                tools:ignore="RtlCompat" />
 
-         <TextView
-             android:id="@+id/tv_jk"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginStart="@dimen/margin_activity"
-             android:text="@string/id"
-             android:textColor="@color/black"
-             android:textSize="18sp"
-             app:layout_constraintStart_toEndOf="@+id/circleImageView3"
-             app:layout_constraintTop_toBottomOf="@+id/textView10"
-             tools:ignore="RtlCompat" />
+            <TextView
+                android:id="@+id/tv_jk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:text="@string/id"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/circleImageView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView10"
+                tools:ignore="RtlCompat" />
 
-         <de.hdodenhof.circleimageview.CircleImageView
-             android:id="@+id/circleImageView5"
-             android:layout_width="40dp"
-             android:layout_height="40dp"
-             android:layout_marginStart="@dimen/margin_activity"
-             android:layout_marginTop="@dimen/margin_activity"
-             android:src="@drawable/ic_bookmark"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toBottomOf="@+id/circleImageView4"
-             tools:ignore="RtlCompat" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:layout_marginTop="@dimen/margin_activity"
+                android:src="@drawable/ic_bookmark"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/circleImageView4"
+                tools:ignore="RtlCompat" />
 
-         <TextView
-             android:id="@+id/textView7"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginStart="@dimen/margin_activity"
-             android:layout_marginTop="@dimen/margin_activity"
-             android:text="@string/address"
-             android:textSize="10sp"
-             app:layout_constraintStart_toEndOf="@+id/circleImageView5"
-             app:layout_constraintTop_toBottomOf="@+id/tv_jk"
-             tools:ignore="RtlCompat,SmallSp" />
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:layout_marginTop="@dimen/margin_activity"
+                android:text="@string/address"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/circleImageView5"
+                app:layout_constraintTop_toBottomOf="@+id/tv_jk"
+                tools:ignore="RtlCompat,SmallSp" />
 
-         <TextView
-             android:id="@+id/tv_alamat"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginStart="@dimen/margin_activity"
-             android:layout_marginTop="5dp"
-             android:text="@string/id"
-             android:textColor="@color/black"
-             android:textSize="18sp"
-             app:layout_constraintStart_toEndOf="@+id/circleImageView3"
-             app:layout_constraintTop_toBottomOf="@+id/textView7"
-             tools:ignore="RtlCompat" />
+            <TextView
+                android:id="@+id/tv_alamat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:layout_marginTop="5dp"
+                android:text="@string/id"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/circleImageView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView7"
+                tools:ignore="RtlCompat" />
 
-         <Button
-             android:id="@+id/button_update"
-             android:layout_width="match_parent"
-             android:layout_height="50dp"
-             android:layout_marginStart="@dimen/margin_activity"
-             android:layout_marginTop="@dimen/margin_activity"
-             android:layout_marginEnd="@dimen/margin_activity"
-             android:background="@drawable/bg_btnlogin"
-             android:text="Ubah Profile"
-             android:textColor="@color/colorPrimary"
-             android:textSize="16sp"
-             android:textStyle="bold"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toBottomOf="@+id/tv_alamat"
-             tools:ignore="HardcodedText" />
+            <Button
+                android:id="@+id/button_update"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/margin_activity"
+                android:layout_marginTop="@dimen/margin_activity"
+                android:layout_marginEnd="@dimen/margin_activity"
+                android:background="@drawable/bg_btnlogin"
+                android:text="Ubah Profile"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_alamat"
+                tools:ignore="HardcodedText" />
 
-     </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
 
