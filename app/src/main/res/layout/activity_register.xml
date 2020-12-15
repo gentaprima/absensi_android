@@ -20,7 +20,7 @@
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:layout_centerInParent="true"
-            android:src="@drawable/register"
+            android:src="@drawable/ic_undraw_develop_app_kvt2"
             tools:ignore="ContentDescription"
             />
 

@@ -50,7 +50,7 @@ public class DetailCutiActivity extends AppCompatActivity implements View.OnClic
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
-        tv_title.setText("Detail Surat Izin");
+        tv_title.setText("Detail Surat Cuti");
         toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
