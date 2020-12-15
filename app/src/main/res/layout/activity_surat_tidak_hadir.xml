@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:text="Bulan Desember"
+            android:text="Bulan Ini"
             tools:ignore="HardcodedText,RtlCompat"
             android:layout_marginStart="@dimen/margin_activity"
             android:layout_marginTop="4dp"
