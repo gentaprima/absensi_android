@@ -78,6 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/rv_datagaji"
+        android:layout_marginTop="@dimen/margin_activity"
         >
 
     </androidx.recyclerview.widget.RecyclerView>

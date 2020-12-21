@@ -152,6 +152,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
                         finish();
 
                     }else{
+                        alertDialog.dismiss();
                         Toast.makeText(UpdateProfileActivity.this,responseProfile.getMessage(),Toast.LENGTH_LONG).show();
                     }
                 }

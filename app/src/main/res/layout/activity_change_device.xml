@@ -14,7 +14,7 @@
         android:layout_marginStart="@dimen/margin_activity"
         android:layout_marginTop="@dimen/margin_activity"
         android:layout_marginEnd="@dimen/margin_activity"
-        android:src="@drawable/ic_undraw_secure_login_pdn4"
+        android:src="@drawable/ic_undraw_unboxing_pbmf"
         tools:ignore="ContentDescription" />
 
     <TextView
@@ -23,9 +23,9 @@
         android:layout_marginStart="@dimen/margin_activity"
         android:layout_marginTop="@dimen/margin_activity"
         android:layout_marginEnd="@dimen/margin_activity"
-        android:text="@string/welcome"
+        android:text="Form Ganti Perangkat"
         android:textColor="@color/white"
-        android:textSize="26sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:fontFamily="@font/capriola" />
 
@@ -36,12 +36,12 @@
         android:layout_marginStart="@dimen/margin_activity"
         android:layout_marginEnd="@dimen/margin_activity"
         android:background="@drawable/bg_edt"
-        android:hint="@string/email"
+        android:hint="No Pegawai"
         android:paddingLeft="@dimen/margin_activity"
         android:textColorHint="@color/text_colorlogin"
         android:inputType="textEmailAddress"
-        tools:ignore="RtlHardcoded,RtlSymmetry"
-        android:id="@+id/edt_email"
+        tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"
+        android:id="@+id/edt_nopegawai"
         android:textColor="@color/white"
         />
 
@@ -59,6 +59,21 @@
         android:paddingLeft="@dimen/margin_activity"
         android:textColorHint="@color/text_colorlogin"
         tools:ignore="Autofill,RtlHardcoded,RtlSymmetry" />
+
+    <EditText
+        android:id="@+id/edt_confirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginStart="@dimen/margin_activity"
+        android:layout_marginTop="@dimen/margin_activity_small"
+        android:layout_marginEnd="@dimen/margin_activity"
+        android:background="@drawable/bg_edt"
+        android:hint="Konfirmasi Password"
+        android:inputType="textPassword"
+        android:paddingLeft="@dimen/margin_activity"
+        android:textColor="@color/white"
+        android:textColorHint="@color/text_colorlogin"
+        tools:ignore="Autofill,HardcodedText,RtlHardcoded,RtlSymmetry" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -67,17 +82,19 @@
         android:layout_marginEnd="@dimen/margin_activity"
         >
         <TextView
-            android:id="@+id/tv_sign"
+            android:id="@+id/tv_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sign"
+            android:text="Login"
             android:textColor="@color/white"
             android:textSize="18sp"
+            android:fontFamily="@font/capriola"
             android:textStyle="bold"
-            tools:ignore="RelativeOverlap,UnusedAttribute" />
+            android:layout_marginStart="10dp"
+            tools:ignore="RelativeOverlap,RtlCompat,UnusedAttribute" />
 
         <ImageButton
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_submit"
             android:layout_width="80dp"
             android:layout_height="40dp"
             tools:ignore="ContentDescription,HardcodedText,RelativeOverlap,RtlCompat,RtlHardcoded"
@@ -89,26 +106,22 @@
             />
 
     </RelativeLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/change_device"
-        android:textColor="@color/text_colorlogin"
-        android:textSize="14sp"
-        android:layout_marginTop="@dimen/margin_activity"
-        android:fontFamily="@font/capriola"
-        />
-    <TextView
-        android:id="@+id/tv_change"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/change_device2"
-        android:textColor="@color/white"
-        android:layout_marginTop="@dimen/margin_activity_small"
-        android:textSize="14sp"
-        android:fontFamily="@font/capriola"
-        />
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:text="Anda ingin Login?"-->
+<!--        android:textColor="@color/text_colorlogin"-->
+<!--        android:textSize="16sp"-->
+<!--        android:layout_marginTop="@dimen/margin_activity"-->
+<!--        tools:ignore="HardcodedText" />-->
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:text="Klik untuk Login"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:layout_marginTop="@dimen/margin_activity_small"-->
+<!--        />-->
 
 </LinearLayout>

@@ -19,7 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.surat.cuti.activity.DetailCutiActivity"></activity>
+        <activity android:name=".ui.device.ChangeDeviceActivity"></activity>
+        <activity android:name=".ui.surat.cuti.activity.DetailCutiActivity" />
         <activity android:name=".ui.surat.cuti.activity.AddCutiActivity" />
         <activity android:name=".ui.surat.cuti.activity.SuratCutiActivity" />
         <activity android:name=".ui.profile.activity.ChangePasswordActivity" />
@@ -32,7 +33,8 @@
         <activity android:name=".ui.surat.tidak_hadir.SuratTidakHadirActivity" />
         <activity android:name=".ui.profile.activity.SettingActivity" />
         <activity android:name=".ui.profile.activity.UpdateProfileActivity" />
-        <activity android:name=".ui.home.HomeActivity" />
+        <activity android:name=".ui.home.HomeActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".ui.register.RegisterActivity" />
         <activity android:name=".ui.login.LoginActivity">
             <intent-filter>

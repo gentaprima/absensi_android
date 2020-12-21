@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.example.absensi.R;
 import com.example.absensi.model.login.ResponseLogin;
 import com.example.absensi.session.SystemDataLocal;
+import com.example.absensi.ui.device.ChangeDeviceActivity;
 import com.example.absensi.ui.home.HomeActivity;
 import com.example.absensi.ui.register.RegisterActivity;
 import com.example.absensi.utils.DialogClass;
@@ -27,7 +28,7 @@ import com.example.absensi.utils.SwitchAcitivity;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, Observer<ResponseLogin> {
 
 
-    TextView tv_sign;
+    TextView tv_sign,tv_change;
     private SystemDataLocal systemDataLocal;
     private LoginViewModel loginViewModel;
     private android.app.AlertDialog alertDialog;
@@ -39,6 +40,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_main);
 
         tv_sign = findViewById(R.id.tv_sign);
+        tv_change = findViewById(R.id.tv_change);
         edtEmail = findViewById(R.id.edt_email);
         edtPassword = findViewById(R.id.edt_password);
         btn_login = findViewById(R.id.btn_login);
@@ -49,6 +51,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
 
         tv_sign.setOnClickListener(this);
+        tv_change.setOnClickListener(this);
         btn_login.setOnClickListener(this);
     }
 
@@ -62,6 +65,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             case R.id.btn_login:
                 login();
+                break;
+
+            case R.id.tv_change:
+                startActivity(new Intent(LoginActivity.this, ChangeDeviceActivity.class));
                 break;
         }
     }

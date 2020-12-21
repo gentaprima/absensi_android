@@ -11,7 +11,9 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +33,7 @@ public class ReportFragment extends Fragment {
     private GetDataLaporanViewModel getDataLaporanViewModel;
     private Activity activity;
     private TextView tv_hadir,tv_tidakhadir,tv_izin;
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -42,6 +45,20 @@ public class ReportFragment extends Fragment {
         tv_hadir = view.findViewById(R.id.tv_hadir);
         tv_tidakhadir = view.findViewById(R.id.tv_tidakhadir);
         tv_izin = view.findViewById(R.id.tv_izin);
+        swipeRefreshLayout = view.findViewById(R.id.swipe);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        swipeRefreshLayout.setRefreshing(false);
+                        readDataLaporan();
+                    }
+                },1000);
+
+            }
+        });
         readDataLaporan();
     }
 

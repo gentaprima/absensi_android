@@ -7,7 +7,7 @@
     app:cardCornerRadius="20dp"
     android:layout_marginStart="@dimen/margin_activity"
     android:layout_marginEnd="@dimen/margin_activity"
-    android:layout_marginTop="@dimen/margin_low"
+    android:layout_marginBottom="@dimen/margin_low"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

@@ -116,4 +116,14 @@ public interface ApiInterface {
     @POST("surat/cancelCuti")
     Call<MessageOnly> cancelCuti(@Field("id_cuti")String id_cuti);
 
+    @FormUrlEncoded
+    @POST("users/changeDevice")
+    Call<MessageOnly> changeDevice(@Field("noPegawai")String noPegawai,
+                                   @Field("merk")String merk,
+                                   @Field("password")String password,
+                                   @Field("confirmPassword")String confirmPassword,
+                                   @Field("deviceId")String deviceId);
+
+
+
 }

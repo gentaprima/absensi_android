@@ -4,8 +4,8 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="sign">Sign Up</string>
-    <string name="change_device">Do you want to change device ?</string>
-    <string name="change_device2">Change Device</string>
+    <string name="change_device">Anda ingin ganti perangkat ?</string>
+    <string name="change_device2">Klik untuk Ganti Perangkat</string>
     <string name="register">Register</string>
     <string name="full_name">Full name</string>
     <string name="phone">Phone Number</string>

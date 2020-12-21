@@ -89,8 +89,14 @@ public class DataGajiActivity extends AppCompatActivity {
             @Override
             public void onChanged(TotalUangMakanResponse totalUangMakanResponse) {
                 if(totalUangMakanResponse.getStatus()){
-                    int total = Integer.parseInt(totalUangMakanResponse.getTotal());
-                    tv_totaluang.setText("Rp " + String.format("%,d",total));
+                    if(totalUangMakanResponse.getTotal() == null){
+                        int total = 0;
+                        tv_totaluang.setText("Rp " + String.format("%,d",total));
+                    }else{
+                        int total = Integer.parseInt(totalUangMakanResponse.getTotal());
+                        tv_totaluang.setText("Rp " + String.format("%,d",total));
+                    }
+
                 }
             }
         });
